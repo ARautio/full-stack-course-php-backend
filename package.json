@@ -1,0 +1,17 @@
+{
+  "name": "fs-course-be-php",
+  "version": "0.1.0",
+  "description": "Full Stack Course: Backend PHP",
+  "author": {
+    "name": "Aki Rautio",
+    "url": "https://ar.kapsi.fi"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "shower-core": "^2.1.0",
+    "shower-ribbon": "^3.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
