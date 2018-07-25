@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 1.4. PHP Math</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../node_modules/shower-ribbon/styles/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide">
+	<h2 class="shout">PHP Math</h2>
+</section>
+	
+<section class="slide">
+	<h2>Definition</h2>
+	<p>Calculations in PHP are done with two different data types; 
+		<mark>integer</mark> and <mark>floating point numbers</mark> (which will be called float).</p>
+	<p>Integers are whole numbers like <mark>-3</mark>, <mark>0</mark>, <mark>100</mark> 
+		while floats can present any numerical value like <mark>-35.053</mark>, 
+		<mark>5.434</mark> or <mark>20.000</mark>.</p>
+</section>
+
+<section class="slide">
+	<h2>Use cases for integers and floats</h2>
+	<p>*Integers* are usually used for <mark>counting</mark> (like amount of characters in string) or
+		<mark>amount of items available</mark> because they are faster to use and reliable 
+		to check equality.</p>
+	<p>*Floating numbers* are used when the application is dealing with <mark>real life values</mark> 
+		like <mark>volumes, monetary values</mark> because there we need a decimal precision.</p>
+</section>
+
+<section class="slide">
+	<h2>Using integers and floats</h2>
+	<pre><code class="php">&lt;?php
+$integer = 4;
+$float = 5.33;
+print $integer*$integer; // 16 
+print $float*$integer; // 21.32 (Note that this is now float)
+print $float*$float; // 28.4089
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Using strings for math</h2>
+	<p>PHP isn't very strict about different data types.</p>
+	<pre><code class="php">&lt;?php
+$string_number = "5.5";
+$float = 5.33;
+print $integer*$string_number; // 29.315
+print $integer*"k"; // A non-numeric value encountered
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<ul>
+		<li>is_float, is_int, is_numeric</li>
+		<li>intval</li>
+		<li>round, floot, ceil</li>
+		<li>number_format</li>
+		<li>rand</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>is_float and is_int</h2>
+	<pre><code class="php">&lt;?php
+$float = 5.52;
+$integer = 4;
+print var_dump(is_float($float)); // true
+print var_dump(is_int($integer)); // true
+print var_dump(is_int("2")); // false
+print var_dump(is_numeric("2")); // true
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>intval</h2>
+	<p>Float can be converted to integer with intval function.</p>
+	<pre><code class="php">&lt;?php
+$float = 5.33;
+$float_to_int = inval($float);
+print $float_to_int; // 5 (Note that we lost precision)
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>round, floor, ceil</h2>
+	<pre><code class="php">&lt;?php
+$float = 5.52;
+print round($float); // 6
+print floor($float); // 5 (will always round to lower);
+print ceil($float); // 6 (will always round to high);
+print round($float*10)/10; // 5.5;
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>number_format</h2>
+	<pre><code class="php">&lt;?php
+$float = 5.52;
+print number_format($float,1); // 5.5
+print number_format($float,5); // 5.52000
+print number_format($float*1000,2,".",","); // 5,520.00
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>rand</h2>
+	<p>Rand function will generate a pseudo random value. This means that there 
+		is a changing seed value (which can be for example time) which will be used to calculate
+	the random value.</p>
+	<pre><code class="php">&lt;?php
+print rand(); // Random number between 0 and maximum number;
+print rand(10,20); // Random number between 10 and 20.
+?&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2 class="shout">Wrap up PHP math</h2>
+</section>
+
+<section class="slide">
+	<ul>
+		<li>
+			Two datatypes for numbers: integer and floating number. Integer for whole numbers and 
+			floating number for real values. PHP is flexible when calculating with datatypes
+		</li>
+		<li>
+			There are function help with conversion and presenting numbers in a correct way.
+		</li>
+		<li>If you wanna know more PHP.net has good documentation from 
+		<a href="https://secure.php.net/manual/en/language.types.integer.php">integer</a>,
+		<a href="https://secure.php.net/manual/en/language.types.float.php">floats</a> and 
+		<a href="https://secure.php.net/manual/en/ref.math.php">math functions</a>.</li>
+	</ul>
+</section>
+
+<div class="progress"></div>
+
+<script src="../../node_modules/shower-core/shower.min.js"></script>
+
+</body>
+</html>
