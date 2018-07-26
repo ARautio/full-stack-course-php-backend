@@ -4,7 +4,7 @@
 	<title>Full Stack Course - 1.3. PHP Strings</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles-ca/styles.css">
 	<style>
         .shower {
             --slide-ratio: calc(16 / 9);
@@ -26,11 +26,11 @@
     <p>Aki Rautio</p>
 </header>
 
-<section class="slide" id="cover">
-	<h2 class="shout">PHP Strings</h2>
-</section>
+<section class="slide main" id="cover"><div class="overlay"><div class="content">
+    <h2 class="shout">PHP Strings</h2>
+</div></div></section>
 	
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
 	<h2>Definition</h2>
   <p>String are series of characters like</p>
   <code>The 1st event was so amazing!</code>
@@ -39,18 +39,18 @@
       (and lines can be separated by \n or in HTML with &lt;br/&gt;).</li>
     <li>It can include any kind of characters like numbers alphabets and marks or even html tags.</li>
   </ul>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
   <h2>Strings in PHP</h2>
   <p>In PHP strings are defined by putting the content inside two quote marks like this:</p>
   <code>$feedback_single = 'The 1st event was so amazing!';</code>
   <code>$feedback_double = "The 1st event was so amazing!";</code>
   <p>The difference between these two are that string with single quote is read 
     as is while string with double quotes will be executed.</p>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
   <h2>Quote examples with Strings</h2>
   <pre>
     <code class="php">&lt;?php
@@ -62,9 +62,9 @@
 ?&gt;
     </code>
   </pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
   <h2>Similar usage with single quotes</h2>
   <p>Single quotes can be used like double quotes by adding variable separately in between and using dot in between. </p>
   <pre>
@@ -75,9 +75,9 @@
 ?&gt;
     </code>
   </pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Combining HTML and PHP strings</h2>
     <p>We can also include HTML in PHP. </p>
     <pre>
@@ -87,9 +87,9 @@
 ?&gt;</code>
   </pre>
   <p>When opening this in a browser it will show: The <b>4th</b> event was so amazing!</p>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Functions</h2>
     <p>PHP has a lot of ready made functions to edit and handle strings. 
       Following ones you will most likely need in future exercises.</p>
@@ -100,9 +100,9 @@
       <li><i>strpos</i> - to find position of character in string</li>
       <li><i>substr</i> - to substring string</li>
     </ul>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Print</h2>
     <p>This function we have already seen earlier but here is a summary. 
       Note that these are also constructs so they can be used without brackets.</p>
@@ -111,27 +111,27 @@
   print $text;  // Executes as Text
   print $text . $text; // Executes as TextText
 ?&gt;</code></pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Strtolower and strtoupper</h2>
     <pre><code class="php">&lt;?php
   $text = 'Text';
   print strtolower($text); // This will execute as text
   print strtoupper($text); // This will execute as TEXT
 ?&gt;</code></pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Strlen</h2>
     <p>This will calculate the amount of characters in string.</p>
     <pre><code class="php">&lt;?php
   $text = 'Text 1';
   print strlen($text); // Executes as 6
 ?&gt;</code></pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Strpos</h2>
     <p>This will count the first position where it finds the character or another string.</p>
     <pre><code class="php">&lt;?php
@@ -139,22 +139,23 @@
   print strpos($text,'e'); // Executes as 1
   print strpos($text,'xt'); // Executes as 2
 ?&gt;</code></pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
     <h2>Substr</h2>
     <p>This will get part of the string.</p>
     <pre><code class="php">&lt;?php
   $text = 'Longer Text and a lot of unnecessary stuff';
   print substr($text, 7, 8); // Executes as Text and
 ?&gt;</code></pre>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide main"><div class="overlay"><div class="content">
   <h2 class="shout">Let's wrap up PHP strings</h2>
-</section>
+</div></div></section>
 
-<section class="slide">
+<section class="slide text"><div class="overlay"><div class="content">
+  <h2>Wrap up</h2>
   <ul>
     <li>String are used almost in every web application so learn them well. 
       Understanding that double quotes execute variables inside the string while 
@@ -165,7 +166,7 @@
       <a href="https://secure.php.net/manual/en/language.types.string.php">strings</a> and 
     <a href="https://secure.php.net/manual/en/ref.strings.php">string functions</a>.</li>
   </ul>
-</section>
+</div></div></section>
 
 <div class="progress"></div>
 
