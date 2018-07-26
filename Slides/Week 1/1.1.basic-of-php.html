@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>1.1 Basics of PHP</h1>
+		<p>Aki Rautio</p>
+	</header>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>PHP: Hypertext preprosessor</h2>
+		<figure>
+				<blockquote>
+					<p>
+							PHP: Hypertext Preprocessor (or simply PHP) 
+							is a server-side scripting language designed for Web development.
+					</p>
+				</blockquote>
+				<figcaption><a href="https://en.wikipedia.org/wiki/PHP">Wikipedia, PHP</a></figcaption>
+		</figure>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>PHP example</h2>
+		<pre>
+			<code>&lt;?php</code> 
+			<code>	print "Hello students";</code> 
+			<code>?&gt;</code>
+		</pre>
+		<p>will render as</p>
+		<code>Hello students</code>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Using PHP</h2>
+		<p>If we are adding previous example to our HTML file and 
+			try to open it in a browser we get a following problem.</p>
+		<div class="columns two">
+			<img src="pictures/1.1.1.empty-page.png" style="width:100%;"/>
+			<img src="pictures/1.1.2.source-of-empty page.png" style="width:100%;"/>
+		</div>
+		<p><b>Why?</b></p>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>What is needed for PHP?</h2>
+		<ol>
+			<li>PHP is <mark>a server-side scripting language</mark> which means that the page needs to be 
+					generated everytime user enters the page.</li>
+			<li>Unlike <mark>HTML</mark> or <mark>Javascript</mark>, it cannot be done on browser so we need an application to 
+				read and convert the code to readable text so that browser can show it.</li>
+		</ol>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>How PHP works</h2>
+		<img src="pictures/1.1.3.how-php-works.png" alt="How PHP works?" width="100%"/>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Running PHP locally</h2>
+		<ul>
+			<li>Serving webpages online we would need a server or webhosting to ensure that pages are available all the time.</li>
+			<li>But for development we can install same applications to our own computer and run PHP files through it.</li>
+			<li>For this purpose we are using <a href="https://www.mamp.info/en/">MAMP</a>.</li>
+		</ul>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Installing and running MAMP</h2>
+		<ol>
+			<li>Go to address <a href="https://www.mamp.info/en/">https://www.mamp.info/en/</a> and 
+				download Windows version from MAMP.</li>
+			<li>Double click installation package and install application to 
+				your folder by following instructions.</li>
+			<li>Open MAMP application and click XXXX.</li>
+		</ol>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>First PHP file</h2>
+		<ol>
+			<li>Go to folder <mark>C:/MAMP/htdocs/</mark> (or where you did install MAMP)</li>
+			<li>Create a file called <mark>feedback.php</mark></li>
+			<li>Add following content to file:<br/>
+					<code>	
+							&lt;?php print "Hello students"; ?&gt;
+						</code>
+			</li>
+			<li>Open Browser and go to <a href="http://localhost">http://localhost/</a></li>
+		</ol>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>PHP building blocks</h2>
+		<ol>
+			<li>Variables (String, Integer, Float, Boolean, Array, Object)</li>
+			<li>Functions and Classes</li>
+		</ol>		
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Variable</h2>
+		<p>XXXX</p>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Introduction to string datatype</h2>
+		<p>XXXX</p>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Introduction to number datatypes (integer and float)</h2>
+		<p>XXXX</p>
+	</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>If statement and Boolean</h2>
+		<p>XXXX</p>
+	</div></div></section>
+	
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>If statement and Boolean</h2>
+		<p>XXXX</p>
+	</div></div></section>
+		
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+
+</body>
+</html>

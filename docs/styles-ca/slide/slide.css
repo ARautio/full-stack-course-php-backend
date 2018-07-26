@@ -1,0 +1,100 @@
+/* Types */
+
+@import 'slide-list.css' screen;
+@import 'slide-full.css' screen;
+
+/* Content */
+
+@import 'content/basic.css';
+@import 'content/code.css';
+@import 'content/footer.css';
+@import 'content/inline.css';
+@import 'content/lists.css';
+@import 'content/quote.css';
+@import 'content/table.css';
+
+/* Elements */
+
+@import 'elements/columns.css';
+@import 'elements/copyright.css';
+@import 'elements/cover.css';
+@import 'elements/next.css';
+@import 'elements/place.css';
+@import 'elements/shout.css';
+
+/* Modifiers */
+
+@import 'modifiers/clear.css';
+@import 'modifiers/white.css';
+@import 'modifiers/black.css';
+
+/* Slide */
+
+.slide {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    width: var(--slide-width);
+    height: var(--slide-height);
+    background: #ffffff;
+    font-size: 22px;
+}
+
+.main {
+    background: -webkit-linear-gradient(top, #00bef2 0%,#00bef2 50%,#ffffff 50%,#ffffff 100%);
+}
+
+.text {
+    background: -webkit-linear-gradient(top, #00bef2 0%,#00bef2 26.2%, #ffffff 26.2%,#ffffff 100%);
+}
+
+.text-invert {
+    background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 26.5%, #00bef2 26.5%,#00bef2 100%);
+}
+
+.overlay {
+    background-color:  rgba(0,0,0,0.2);
+    z-index: 0;
+    width: auto;
+    height: 100%;
+    padding: 48px 100px 0;
+    margin: 0 10px 0 0;
+}
+
+.content {
+    background: -webkit-linear-gradient(top, #00bef2 0%,#00bef2 50%,#ffffff 50%,#ffffff 100%);
+    z-index: 0;
+    height: 80%;
+    margin: 10px 0;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.50);
+    padding: 0 30px;
+}
+
+.text div.content {
+    background: -webkit-linear-gradient(top,#00bef2 0%,#00bef2 20%, #ffffff 20%,#ffffff 100%);
+    margin: 10px 0;
+}
+
+
+.text-invert div.content{
+    background: -webkit-linear-gradient(top,#ffffff 0%,#ffffff 20%, #00bef2 20%,#00bef2 100%);
+    margin: 13px 0;}
+
+/* Number */
+
+.slide::after {
+    position: absolute;
+    top: 40px;
+    left: 870px;
+    box-sizing: border-box;
+    padding-top: 15px;
+    width: var(--ribbon-size);
+    height: calc(var(--ribbon-size) * 2);
+    background-size: cover;
+    color: #ffffff;
+    counter-increment: slide;
+    content: counter(slide);
+    text-align: center;
+}
