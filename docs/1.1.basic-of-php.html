@@ -134,23 +134,27 @@ print $variable;
 	<section class="slide text"><div class="overlay"><div class="content">
 		<h2>Introduction to string datatype</h2>
 		<pre><code>&lt;?php 
-$variable = "Hello students";
-print $variable . $variable;
+$name = "YOUR NAME";
+$email = "EMAIL@YOUREMAIL.COM";
+
+print $name . ' ' . $email;
 ?&gt;
 </code>
 		</pre>
-		<p>To understand string better, check the PHP String tutorial from Moodle.</p>
+		<p>We go through strings in PHP deeper in a tutorial.</p>
 	</div></div></section>
 
 	<section class="slide text"><div class="overlay"><div class="content">
 		<h2>Introduction to number datatypes</h2>
 		<pre><code>&lt;?php 
-$variable = 5;
-print $variable * $variable;
+$name = "YOUR NAME";
+$email = "EMAIL@YOUREMAIL.COM";
+
+print strlen($name) + strlen($email); 
 ?&gt;
 </code>
 		</pre>
-		<p>To understand string better, check the PHP Math tutorial from Moodle.</p>
+		<p>We go through numbers and math in PHP deeper in a tutorial.</p>
 	</div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
@@ -169,7 +173,7 @@ if ( $is_variable_over_zero ) {
 		<h2>If statement and Boolean</h2>
 		<pre><code>&lt;?php 
 $variable = 5;
-if ( $variable > 0 ) {
+if ( $variable > 5 ) {
 	print $variable * $variable;
 }
 ?&gt;
@@ -181,14 +185,15 @@ if ( $variable > 0 ) {
 		<h2>If and else statement and Boolean</h2>
 		<pre><code>&lt;?php 
 $variable = 5;
-if ( $variable > 0 ) {
+if ( $variable > 5 ) {
 	print $variable * $variable;
 } else {
 	print $variable;
 }
 ?&gt;
 </code>
-	</div></div></section>
+</div></div></section>
+
 
 	<div class="progress"></div>
 
