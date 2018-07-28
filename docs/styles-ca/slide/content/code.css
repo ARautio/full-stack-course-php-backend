@@ -6,6 +6,10 @@
     white-space: normal;
 }
 
+.slide pre.numbers {
+    margin-left: 40px;
+}
+
 /* Inner */
 
 .slide pre code {
