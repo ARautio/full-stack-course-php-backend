@@ -82,6 +82,10 @@
     background: -webkit-linear-gradient(top,#ffffff 0%,#ffffff 20%, #00bef2 20%,#00bef2 100%);
     margin: 13px 0;}
 
+pre.smallcode {
+    font-size: 14px;
+}
+
 /* Number */
 
 .slide::after {
