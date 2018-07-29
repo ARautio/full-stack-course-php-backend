@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Full Stack Course - 1.2. Request</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles-ca/styles.css">
+    <style>
+          .shower {
+              --slide-ratio: calc(16 / 9);
+          }
+      </style>
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+      hljs.configure({tabReplace: '  '});
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body class="shower list">
+
+  <header class="caption">
+    <h1>1.2 Request</h1>
+    <p>Aki Rautio</p>
+  </header>
+
+  <section class="slide main"><div class="overlay"><div class="content">
+    <h2 class="shout">Requests in PHP</h2>
+  </div></div></section>
+
+  <section class="slide text"><div class="overlay"><div class="content">
+    <h2>Browser asks page</h2>
+    <p>Browser will send a request to the server which it tries to connect and it looks like this:
+    </p>
+    <img src="pictures/1.2.1.request.png" />
+    <p>The server will read this information and act according to it.</p>
+  </div></div></section>
+
+  <section class="slide text"><div class="overlay"><div class="content">
+    <h2>Requests</h2>
+    <p>Client (browser or an application) can use different types of 
+      <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods">methods</a>
+      when making a request to our application. These different methods tell what kind of action is
+      expected from our application.</p> 
+      <p>The most common ones are GET and POST methods and we are going to use them both in the course.</p>
+  </div></div></section>
+
+  <section class="slide text"><div class="overlay"><div class="content">
+    <h2>GET method and parameters</h2>
+    <p>GET method request is executed when user writes url to address bar or clicks the link.</p>
+    <p>If we want to pass parameters in get request it can be done by adding <mark>?</mark> after our php file 
+      in address bar and writing parameters like:</p>
+    <code>http://localhost/feedback.php?name=Test&email=test@test.com</code>
+  </div></div></section>
+
+  <section class="slide text"><div class="overlay"><div class="content">
+    <h2>Input data from GET</h2>
+    <p>PHP has a variable $_GET which will have the parameters 
+      from GET request when such is given.</p>
+    <pre class="smallcode">
+      <code>&lt;?php
+$name = isset($_GET['name']) ? $_GET['name'] : '';
+$email = isset($_GET['email']) ? $_GET['email'] : '';
+
+if ( strlen($name) > 0 && strlen($email) > 0 ) {
+  print "Name: " . $name;
+  print "Email: " . $email;
+}
+?&gt;</code>
+    </pre>
+  </div></div></section>
+
+  <section class="slide text"><div class="overlay"><div class="content">
+      <h2>POST method and parameters</h2>
+      <p>POST method request is executed when user press a submit button in a form.</p>
+      <p>Parameters for this request comes from the form.</p>
+      <pre>
+        <code>&lt;form method="post" action="http://localhost/feedback.php"&gt;
+  &lt;input type="text" name="email"/&gt;
+  &lt;input type="submit value="Send" /&gt; 
+&lt;/form&gt; 
+        </code>
+      </pre>
+    </div></div></section>
+  
+    <section class="slide text"><div class="overlay"><div class="content">
+      <h2>Input data from POST</h2>
+      <p>PHP has a variable $_POST which will have the parameters 
+        from POST request when such is given.</p>
+      <pre class="smallcode">
+        <code>&lt;?php
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$email = "";
+
+if ( strlen($name) > 0 || strlen($email) > 0 ) {
+  print "Name: " . $name;
+  print "Email: " . $email;
+}
+?&gt;</code>
+      </pre>
+    </div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+  <h2>Univeral request</h2>
+  <p>Besides method based PHP variables there is also an universal variable $_REQUEST
+    which contains information from both.</p>
+    <pre class="smallcode">
+        <code>&lt;?php
+$name = isset($_REQUEST['name']) ? $_REQUEST['name'] : '';
+$email = isset($_REQUEST['email']) ? $_REQUEST['email'] : '';
+
+if ( strlen($name) > 0 && strlen($email) > 0 ) {
+  print "Name: " . $name;
+  print "Email: " . $email;
+}
+?&gt;</code>
+      </pre>
+</div></div></section>
+
+
+<section class="slide main"><div class="overlay"><div class="content">
+  <h2 class="shout">Wrap up to Requests</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+    <h2>Wrap up to Requests</h2>
+    <ul>
+      <li>Requests are the way to get an input form users.</li>
+      <li>Get method is getting the data from the URL</li>
+      <li>POST method is getting the data from the forms</li>
+      <li>PHP has variables $_GET, $_POST and $_REQUEST to use this information.</li>
+    </ul>
+</div></div></section>
+  
+
+<div class="progress"></div>
+
+<script src="js/shower.min.js"></script>
+
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>Full Stack Course - 1.1. Basics of PHP</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="styles-ca/styles.css">
@@ -25,6 +25,10 @@
 		<h1>1.1 Basics of PHP</h1>
 		<p>Aki Rautio</p>
 	</header>
+
+	<section class="slide main"><div class="overlay"><div class="content">
+		<h2 class="shout">Basics of PHP</h2>
+	</div></div></section>
 
 	<section class="slide text"><div class="overlay"><div class="content">
 		<h2>PHP: Hypertext preprosessor</h2>
@@ -92,7 +96,7 @@
 				download Windows version from MAMP.</li>
 			<li>Double click installation package and install application to 
 				your folder by following instructions.</li>
-			<li>Open MAMP application and click XXXX.</li>
+			<li>Open MAMP application, wait and click Open web page.</li>
 		</ol>
 	</div></div></section>
 
@@ -106,7 +110,7 @@
 							&lt;?php print "Hello students"; ?&gt;
 						</code>
 			</li>
-			<li>Open Browser and go to <a href="http://localhost">http://localhost/</a></li>
+			<li>Open Browser and go to <a href="http://localhost/feedback.php">http://localhost/feedback.php</a></li>
 		</ol>
 	</div></div></section>
 
@@ -194,6 +198,27 @@ if ( $variable > 5 ) {
 </code>
 </div></div></section>
 
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>If, else and Boolean - short</h2>
+	<pre><code>&lt;?php 
+$variable = 5;
+print ($variables > 5) ? $variables*$variable : $variable;
+?&gt;
+</code></pre>
+<p>If you compare the short version and the long version from previous page, can you find the
+	common parts? <a href="https://stackoverflow.com/questions/1506527/how-do-i-use-the-ternary-operator-in-php-as-a-shorthand-for-if-else">
+	Here is a good conversation from Stackoverflow to help out.</a>
+</p>
+</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Function</h2>
+	<pre><code>&lt;?php  $return_value = strlen($params) ?&gt; </code></pre>
+<p>If you look <a href="https://secure.php.net/manual/en/function.strlen.php">strlen</a> documentation
+	you can see that it takes one string variable as parameter and return an integer.</p>
+</div></div></section>
 
 	<div class="progress"></div>
 
