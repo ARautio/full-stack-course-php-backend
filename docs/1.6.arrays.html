@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 1.6. Arrays</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles-ca/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide main"><div class="overlay"><div class="content">
+	<h2 class="shout">Arrays</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Arrays</h2>
+	<p>Array is a datatype which includes a set of items of other datatype.
+	</p>
+	<p>For example an array can be "Yellow", "Blue", "Red, "Purple".</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Arrays in PHP</h2>
+	<p>Arrays in PHP contains three different types of set of items (indexed, associated and multidimensional). 
+		First and the easiest to understand	is indexed array. This means that each of the 
+		items in array has a number which is refers.</p>
+		<p>For example in our previous set of colours, "Yellow" would be 0 and "Red" would be 2.</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Indexed array in PHP</h2>
+		<pre>
+				<code>&lt;?php
+$colors = array("Yellow","Blue","Green","Red","Purple");
+print $colors[0]; // Prints Yellow
+print $colors[2]; // Prints Red
+?&gt;</code>
+			</pre>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Indexed array in PHP</h2>
+		<pre><code>&lt;?php
+$colors = array("Yellow","Blue","Green","Red","Purple");
+$colors[0] = "White";
+print $colors[0]; // Prints White
+?&gt;</code>
+</pre></div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Indexed array in PHP and loops</h2>
+		<pre><code>&lt;?php
+$colors = array("Yellow","Blue","Green","Red","Purple");
+for($x = 0; $x < sizeof($colors); $x++){
+	print $colors[$x]; // Prints colors one by one
+}
+?&gt;</code>
+</pre></div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+			<h2>Indexed array in PHP and exercise</h2>
+			<p>Print colors in opposite order.</p>
+		</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Associated array</h2>
+		<p>Difference between indexed array and associated arrays is that the keys
+			can be string instead of integers from 0.
+		</p>
+		<p>From example 
+			<pre>
+(
+	"top" => "yellow", <br/>
+	"middle" => "green", <br/>
+	"bottom" => "red"
+)
+			</pre> </p>
+	</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Associated array in PHP</h2>
+		<pre>
+				<code>&lt;?php
+$colors = array("top" => "yellow", 
+	"middle" => "green", "bottom" => "red");
+print $colors["top"]; // Prints yello
+print $colors["bottom"]; // Prints red
+?&gt;</code>
+			</pre>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Associated array in PHP Exercise</h2>
+		<p>Make page which will print colors of lithuanian flag in right order,</p>
+	</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Associated array in PHP and foreach</h2>
+		<pre><code>&lt;?php
+$colors = array("top" => "yellow", 
+	"middle" => "green", "bottom" => "red");
+foreach($colors as $color){
+	print $color;
+}
+?&gt;</code>
+			</pre>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Multidimension array in PHP</h2>
+		<p>Example 
+			<pre>
+			(<br/>
+				"lithuania" => ["yellow","green","red"], <br/>
+				"latvia" => ["green","white","red"]<br/>
+			) 
+			</pre></p>
+	</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Multidimension array in PHP</h2>
+	<pre class="smallcode"><code>&lt;?php
+$lang = array("lithuania" => ["yellow","green","red"], 
+	"latvia" => ["green","white","red"]);
+
+foreach ($lang as $key => $colors) {
+	print $key; 
+	foreach($colors as $color){
+		print $color;
+	}
+}
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Multidimension array exercise</h2>
+		<ul>
+			<li>Create an indexed array with 3 best basketball teams in Lithuania and
+					another indexed multidimensional array with 2 best players of those 3 best basketball teams.</li>
+			<li>
+				Make a loop which will print first the team name (in order where best team is first) and 
+				under a team both of those players like:
+				<pre>
+TEAM 1:<br/>
+- Player 1<br/>
+- Player 2<br/>
+				</pre>
+			</li>
+		</ul>
+		<p>
+		</p>
+		<p></p>
+	</div></div></section>
+	
+<section class="slide main"><div class="overlay"><div class="content">
+			<h2 class="shout">Wrap up arrays</h2>
+		</div></div></section>
+		
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Wrap up</h2>
+		<ul>
+			<li>Arrays are set of different datatypes.</li>
+			<li>They can have either integer/index (indexed array) or string (associated) as a key.</li>
+			<li>Foreach is to go through arrays in PHP.</li>
+			<li>
+				<a href="https://secure.php.net/manual/en/language.types.array.php">PHP.net Array</a>
+				documentation.
+			</li>
+		</ul>
+	</div></div></section>
+
+<div class="progress"></div>
+
+<script src="js/shower.min.js"></script>
+
+</body>
+</html>

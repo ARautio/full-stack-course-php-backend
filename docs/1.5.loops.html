@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 1.5. Loops</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles-ca/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide main"><div class="overlay"><div class="content">
+	<h2 class="shout">Loops</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Loops</h2>
+	<p>Loop is a way to execute a block of code over and over again 
+		until specific rules are filled. The rules depend on the loop type. 
+	</p>
+	<p style="text-align: center;">
+		<img src="pictures/1.5.1.loop-architecture.jpg" width=200/>
+	</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>While loop</h2>
+		<p>The most simple loop is a while loop:</p>
+		<pre class="mediumcode">
+<code>&lt;?php
+$is_this_true = true;
+while($is_this_true){
+	print "Hey";
+}
+?&gt;</code>
+			</pre>
+			<p>Try this loop out and try to guess why it doesn't work.</p>	
+	</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>While loop</h2>
+		<p>To fix a previous issue, we need to have something that changes boolean to false.</p>
+		<pre class="smallcode">
+				<code>&lt;?php
+$is_this_true = true;
+while($is_this_true){
+	print "Hey";
+	$is_this_true = false;
+}
+?&gt;</code>
+			</pre>
+			<p>What will this do?</p>	
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>While loop</h2>
+		<p>To get loop go through multiple times the code, we need to have a condition that doesn't 
+			change boolean to false immediately.</p>
+		<pre class="smallcode">
+				<code>&lt;?php
+$rounds = 0;
+while($rounds < 10){
+	print "Hey";
+	$rounds = $rounds +1 ; // This can be shorten $rounds++;
+}
+?&gt;</code>
+			</pre>
+			<p>And now we have Hey 10 times.</p>	
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>While loop exercise</h2>
+		<p>How to print numbers from 1 to 100? Like<br/>
+			1<br/>
+			2<br/>
+			3<br/>
+		</p>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>For loop</h2>
+	<p>Instead we can use a for-loop:</p>
+	<pre>
+			<code>&lt;?php
+for ($x = 1; $x <= 10; $x++) {
+	print "Hello"
+} 
+?&gt;</code>
+		</pre>
+<p>This will print <i>Hello</i> 10 times.</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Using for loop</h2>
+		<p>For loop can also print numbers because it knows how many times it has gone already.</p>
+		<pre class="mediumcode">
+				<code>&lt;?php
+for ($x = 1; $x <= 10; $x++) {
+	print $x . "Hello"
+} 
+?&gt;</code>
+			</pre>
+	<p>Try this out and try to think why it prints numbers that way.</p>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>For-loop syntax</h2>
+		<pre><code>
+for (init counter; test counter; increment counter) {
+	code to be executed;
+}</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>For loop syntax</h2>
+	<p>
+		<b>init counter:</b> Here we initialize a variable with start value.<br/>
+		<b>test counter:</b> This one tests out if we should do one more round. If this is true then we do.<br/>
+		<b>increment counter:</b> This changes the value so one closer to limit of test counter.
+	</p>
+	
+</div></div></section>
+
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Exercise for for loop</h2>
+		<p>Make a loop which will print <u>every other</u> number until 50.</p>
+	</div></div></section>
+
+
+	<section class="slide text"><div class="overlay"><div class="content">
+			<h2>Foreach loop</h2>
+			<p>Foreach loop is even more sophisticate function. We are going to use
+				it when we have gone through concept of an array, but at this point it's good to 
+				know that such loop exists.
+			</p>
+		</div></div></section>
+
+	<section class="slide main"><div class="overlay"><div class="content">
+			<h2 class="shout">Wrap up Loops</h2>
+		</div></div></section>
+		
+		<section class="slide text"><div class="overlay"><div class="content">
+			<h2>Wrap up</h2>
+			<ul>
+				<li>
+					Loops are way to execute a certain block of code again and again.
+				</li>
+				<li>
+					We have three types of loops in PHP: While, For, Foreach. There is also
+					do while loop but I'm not suggesting to use it.
+				</li>
+				<li>
+					<a href="https://secure.php.net/manual/en/control-structures.while.php">PHP.net While</a>,
+					<a href="https://secure.php.net/manual/en/control-structures.for.php">PHP.net For</a> And
+					<a href="https://secure.php.net/manual/en/control-structures.foreach.php">PHP.net Foreach</a>
+					documentations.
+				</li>
+			</ul>
+		</div></div></section>
+
+<div class="progress"></div>
+
+<script src="js/shower.min.js"></script>
+
+</body>
+</html>
