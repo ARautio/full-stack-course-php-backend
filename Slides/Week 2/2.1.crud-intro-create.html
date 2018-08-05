@@ -22,125 +22,119 @@
 <body class="shower list">
 
 <section class="slide text"><div class="overlay"><div class="content">
-	<h2 class="shout">Databases</h2>
+	<h2>CRUD: Intro</h2>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-	<h2>Introduction Databases</h2>
-	<p>Databases means a set of data which is organised certain way so everything from excel sheets to
-		complex set of data organisation can be called as databases. In this course and mostly in web development,
-		<mark>a relational database</mark> is used. 
-	</p>
-	<p>
-		If to simplify relational databases are a bit like an excel file. 
-		They can contain multiple <mark>tables</mark> and each table can 
-		consist from <mark>rows</mark> and <mark>columns</mark>.
+	<h2>CRUD</h2>
+	<p>CRUD comes from words Create, Read, Update, Delete</p>
+	<p>It's a basic concept to manage data in applications and helps out understanding
+		what components are needed to create a basic application.
 	</p>
 </div></div></section>
 
+	
 <section class="slide text"><div class="overlay"><div class="content">
-	<h2>Database terminology</h2>
-
-</div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>SQL</h2>
-		
-</div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>phpMyAdmin</h2>
-		
-</div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>Creating a database with phpMyAdmin</h2>
-		
-</div></div></section>
-
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>Column types in tables</h2>
+		<h2>Target</h2>
+		<p>For next two week ours target is the create a blog which has following features:</p>
 		<ul>
-			<li>Text: varchar</li>
-			<li>Numeric: integer, float, decimal</li>
-			<li>Date and time: date, datetime, time, timestamp</li>
-			<li>Options: auto increment, unique, primary key</li>
+			<li>You are able to write a blog text and save it database.</li>
+			<li>You are able to read the blog text and see all the blogtexts.</li>
+			<li>Update already written blog texts</li>
+			<li>Delete blog texts</li>
 		</ul>
+		<p>This will be part of your individual project.</p>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Text: Varchar</h2>
-		<p>
+		<h2>Preparations</h2>
+		<p>Inside your htdocs, create a folder called blog. This is where we will have all the files.</p>
+		<p>This time we need PHP files only because we are going to make html and PHP in same file.</p>
+		<p>We also need a database structure.</p>
+</div></div></section>
 
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Files</h2>
+		<p>index.php - This will show our blog texts.</p>
+		<p>edit.php - This will be editing our blog texts.</p>
+		<p>Note that we combine html and php this time so no need for html files. To makes styles
+			add your own css files.
 		</p>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Numeric: integer, float, decimal</h2>
-		<p>
+		<h2>Example from read</h2>
+		<p><img src="pictures/2.1.blog-read.png" /></p>
+</div></div></section>
 
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Example from edit</h2>
+		<p><img src="pictures/2.2.blog-edit.png" /></p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Database</h2>
+		<p>We need id, date, author, title, description</p>
+		<p>How we do that?</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Database</h2>
+		<p>TODO: CREATE TABLE SCRIPT</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>CRUD: Create</h2>
+		<p>For Create functionality we need a form which will submit the new or updated blog text to 
+			database.
 		</p>
+		<p>We also need a PHP code to get the input from form, validate it and pass it to database with SQL
+			script.</p>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Date and time: date, datetime, time, timestamp</h2>
-		<p>
-
-		</p>
+		<h2>Let's start with a form</h2>
+		TODO: HTML fiddle
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>auto increment, unique, primary key</h2>
-		<p>
-
-		</p>
+		<h2>Read input</h2>
+		TODO: PHP part
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Creating a table with phpMyAdmin</h2>
-		
+		<h2>and validate the content</h2>
+		TODO: Validation
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Adding and editing columns to table</h2>
-		
+		<h2>and show error when validaiton isn't right</h2>
+		TODO: Validation
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Managing rows</h2>
-		
+		<h2>SQL for create</h2>
+		INSERT INTO blog (name, text, date) values ($name, $text, $date)
+
+		// TODO: Write about injection
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Export table with phpMyAdmin</h2>
-		
+		<h2>Limit content for months</h2>
+		TODO: Validation
 </div></div></section>
+
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>SQL queries</h2>
-		
+		<h2>SQL limit content for months</h2>
+		TODO: Validation
 </div></div></section>
+
 
 <section class="slide text"><div class="overlay"><div class="content">
-		<h2>Using SQL in phpMyAdmin</h2>
-		
+		<h2>Let's test out</h2
 </div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2 class="shout">Summary</h2>
-</div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>Summary</h2>
-		<ul>
-			<li>Databases are way to store information in certain way. 
-				We are going to MySQL which is a relational database and uses tables, columns and rows.</li>
-			<li>Columns can have different type of datatypes</li>
-			<li>SQL is a language to </li>
-		</ul>
-</div></div></section>
-
 
 <div class="progress"></div>
 

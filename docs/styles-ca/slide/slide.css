@@ -86,6 +86,10 @@ pre.smallcode {
     font-size: 14px;
 }
 
+pre.mediumcode {
+    font-size: 18px;
+}
+
 /* Number */
 
 .slide::after {

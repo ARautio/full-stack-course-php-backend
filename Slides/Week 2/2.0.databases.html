@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 1.4. PHP Math</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../node_modules/shower-ribbon/styles/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide main"><div class="overlay"><div class="content">
+	<h2 class="shout">Databases</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Introduction Databases</h2>
+	<p>Databases means a set of data which is organised certain way so everything from excel sheets to
+		complex set of data organisation can be called as databases. In this course and mostly in web development,
+		<mark>a relational database</mark> is used. 
+	</p>
+	<p>
+		If to simplify relational databases are a bit like an excel file. 
+		They can contain multiple <mark>tables</mark> and each table can 
+		consist from <mark>rows</mark> and <mark>columns</mark>.
+	</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Database terminology</h2>
+
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>SQL</h2>
+		
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>phpMyAdmin</h2>
+		
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Creating a database with phpMyAdmin</h2>
+		
+</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Column types in tables</h2>
+		<ul>
+			<li>Text: varchar</li>
+			<li>Numeric: integer, float, decimal</li>
+			<li>Date and time: date, datetime, time, timestamp</li>
+			<li>Options: auto increment, unique, primary key</li>
+		</ul>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Text: Varchar</h2>
+		<p>Varchar is like string PHP but since we are working with structured data,
+			we also need to know the maximum size of the string. That's why varchar needs a max size.
+		</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Numeric: integer, float, decimal</h2>
+		<p>For numerical presentation we have two same datatypes as with PHP (integer and float).
+			The only difference with PHP is that integer can be defined to have only positive number by giving 
+			it UNSIGNED attribute.
+		</p>
+		<p>Besides already familiar datatypes, we have Decimal which is more simply saying more defined float. Decimal will
+			always have certain amount of numbers after dot. This is very handly for monetary values or other clearly defined numeric values.
+		</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Date and time: date, datetime, time, timestamp</h2>
+		<p>Date and time datatypes are to store specific dates and times. They can be used to save date of events like 
+			when the feedback has been created. Or they can be used to save a start and end date for example for reservations.
+		</p>
+		<ul>
+			<li>Date datatype defines only the date like 15.10.2016.</li>
+			<li>Datetime defines both date and time like 15.10.2015 22:30</li>
+			<li>Timestamp is a numeric value which counts seconds from date XXXX.</li>
+		</ul>
+		<p>We go through date functions more in couple of weeks.</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>auto increment, unique, primary key</h2>
+		<p>Besides the datatypes there are attributes for each column which can be used and they come handy
+			in certain situations.
+		</p>
+		<ul>
+			<li>Auto increment is for columns with datatype integer. For every row it adds a bigger number. 
+				Like first row will get 1, second 2, third 3 and so on. The start number 
+				if auto increment can be also defined. This is very good for example order number.
+			</li>
+			<li>
+				Unique is for all columns in general. You can define that certain column or columns
+				needs to be unique when inserting a row and if they are not the database will give an error.
+				This is good for example username.
+			</li>
+			<li> primary key
+				//TODO: Check what primary key does
+			</li>
+		</ul>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Creating a table with phpMyAdmin</h2>
+		// TODO: Write short guide how to add table in phpMyAdmin
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Adding and editing columns to table</h2>
+		// TODO: Write short guide how to add table in phpMyAdmin
+
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Managing rows</h2>
+		// TODO: Write short guide how to add table in phpMyAdmin
+		
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Export table with phpMyAdmin</h2>
+		// TODO: Write short guide how to add table in phpMyAdmin
+	
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>SQL queries</h2>
+		<p>SQL databases with work language called SQL. This language is to communicate
+			with the database and create, read, modify and delete data as well as 
+			creating a structure.
+		</p>
+		// TODO here is the picture of the structes
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Using SQL in phpMyAdmin</h2>
+		<p>SQL can be also used with phpMyAdmin if needed.</p>
+</div></div></section>
+
+<section class="slide main"><div class="overlay"><div class="content">
+		<h2 class="shout">Summary</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Summary</h2>
+		<ul>
+			<li>Databases are way to store information in certain way. 
+				We are going to MySQL which is a relational database and uses tables, columns and rows.</li>
+			<li>Columns can have different type of datatypes.</li>
+			<li>SQL is a language to communicate with the database.</li>
+		</ul>
+</div></div></section>
+
+
+<div class="progress"></div>
+
+<script src="../../node_modules/shower-core/shower.min.js"></script>
+
+</body>
+</html>
