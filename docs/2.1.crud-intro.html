@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 2.1. CRUD: Intro + Create</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles-ca/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide main"><div class="overlay"><div class="content">
+	<h2 class="shout">CRUD: Intro</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>CRUD</h2>
+	<p>CRUD comes from words Create, Read, Update, Delete</p>
+	<p>It's a basic concept to manage data in applications and helps out understanding
+		what components are needed to create a basic application.
+	</p>
+</div></div></section>
+
+	
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Target</h2>
+		<p>For next two week ours target is the create a blog which has following features:</p>
+		<ul>
+			<li>You are able to write a blog text and save it database.</li>
+			<li>You are able to read the blog text and see all the blogtexts.</li>
+			<li>Update already written blog texts</li>
+			<li>Delete blog texts</li>
+		</ul>
+		<p>This will be part of your individual project.</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Preparations</h2>
+		<p>Inside your htdocs, create a folder called blog. This is where we will have all the files.</p>
+		<p>This time we need PHP files only because we are going to make html and PHP in same file.</p>
+		<p>We also need a database structure.</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Files</h2>
+		<p>index.php - This will show our blog texts.</p>
+		<p>edit.php - This will be editing our blog texts.</p>
+		<p>Note that we combine html and php this time so no need for html files. To makes styles
+			add your own css files.
+		</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Example from read</h2>
+		<p><img src="pictures/2.1.blog-read.png" /></p>
+</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Example from edit</h2>
+		<p><img src="pictures/2.2.blog-edit.png" /></p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Database</h2>
+		<p>We need id, date, author, title, content</p>
+		<p>How we do that?</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Database</h2>
+		<pre class="smallcode"><code>
+			CREATE TABLE blog_entries (
+				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+				author VARCHAR(50) NOT NULL,
+				title VARCHAR(50) NOT NULL,
+				content TEXT NOT NULL
+			)
+		</code></pre>
+</div></div></section>
+
+<div class="progress"></div>
+
+<script src="js/shower.min.js"></script>
+
+</body>
+</html>

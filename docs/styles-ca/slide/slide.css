@@ -90,6 +90,10 @@ pre.mediumcode {
     font-size: 18px;
 }
 
+ul.small {
+    font-size: 0.75em;
+}
+
 /* Number */
 
 .slide::after {
