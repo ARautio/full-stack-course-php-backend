@@ -84,12 +84,11 @@
 		<pre><code>
 			CREATE TABLE blog_entries (
 				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-				date TIMESTAMP,
-				author VARCHAR(50),
-				title VARCHAR(50),
-				content TEXT
+				date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+				author VARCHAR(50) NOT NULL,
+				title VARCHAR(50) NOT NULL,
+				content TEXT NOT NULL
 			)
-
 		</code></pre>
 </div></div></section>
 

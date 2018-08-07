@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 2.4. Objects</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles-ca/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide main"><div class="overlay"><div class="content">
+	<h2 class="shout">Objects</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Object in general</h2>
+	<p>Object is a structure which combined associated array type of key value structures
+		with data and functions.</p>
+	<p>This helps if we want to have all the operations and data 
+		related to some type of content in place. <!-- // TODO: For example with XXX --></p>
+	<p>Some languages with better to use of objects and other less. PHP supports objects greatly.
+		If you are interest about to know about Object oriented programming 
+		<a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia</a> has a good article.
+	</p>
+</div></div></section>
+
+	
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<p>To create our own object we would need to do a <mark>Class</mark> which we will cover later.
+		So for now, we can create and use objects from the ready made objects.</p>
+		<p>For this purpose I have made a simple class which we are using. Download it by clicking 
+			<a href="">here</a> and save it to same folder with other files we are doing this lecture.</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<p>Create a new PHP file and write following for the start.</p>
+		<pre><code class="php">&lt;?php
+include 'Users.php';
+				?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+include 'Users.php';
+$usersObject = new Users(); // This creates a new object from Class
+				?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+include 'Users.php';
+$usersObject = new Users();
+$usersObject->addUser("Karolina"); // Class has function addUser;
+				?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+include 'Users.php';
+$usersObject = new Users();
+$usersObject->addUser("Karolina"); // Class has function addUser;
+$users = $usersObject->users; // Class has also a variable users;
+
+				?&gt;</code></pre>
+</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+....
+print_r($users); // Prints Karolina
+print "<br/>";
+print_r($usersObject->users); // Prints Karolina
+print "<br/>";
+				?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+....
+$usersObject->addUser("Lukas");
+				?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+....
+print_r($users); // Prints Karolina
+print "<br/>";
+print_r($usersObject->users); // Prints Karolina and Lukas
+print "<br/>";
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+....
+$usersObject->removeUser(1); // Class has also removeUser function.
+print_r($usersObject->users); // Prints Karolina
+
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+....
+$usersObject2 = new Users();
+$usersObject2->addUser("Greta");
+
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+....
+$usersObject2 = new Users();
+$usersObject2->addUser("Greta");
+print_r($usersObject2); // Prints Greta
+print_r($usersObject); // Prints Karolina
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide main"><div class="overlay"><div class="content">
+		<h2 class="shout">Wrap up PHP objects</h2>
+	</div></div></section>
+	
+	<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Wrap up</h2>
+		<ul>
+			<li>
+				Objects are datatype which combines functions and data to single variable. 
+				With this a single variable can handle certain set of operations.
+			</li>
+			<li>
+				New object is create with <mark>new ClassName();</mark> and functions and data are
+				used with <mark>$variable->function</mark>.
+			</li>
+			<li>If you wanna know more PHP.net has good documentation from 
+			<a href="https://secure.php.net/manual/en/language.oop5.php">objects and classes</a>.</li>
+		</ul>
+	</div></div></section>
+
+<div class="progress"></div>
+
+<script src="js/shower.min.js"></script>
+
+</body>
+</html>
