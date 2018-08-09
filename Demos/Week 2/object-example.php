@@ -33,5 +33,4 @@ $usersObject2->addUser("Greta");
 print_r($usersObject2); // Prints Greta
 print_r($usersObject); // Prints Karolina
 
-
 ?>
