@@ -52,84 +52,73 @@
 		<p>Create a new PHP file and write following for the start.</p>
 		<pre><code class="php">&lt;?php
 include 'Users.php';
-				?&gt;</code></pre>
+?&gt;</code></pre>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-include 'Users.php';
-$usersObject = new Users(); // This creates a new object from Class
-				?&gt;</code></pre>
+		<pre class="mediumcode"><code class="php">&lt;?php
+	include 'Users.php';
+	$usersObject = new Users(); // This creates a new object from Class
+?&gt;</code></pre>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-include 'Users.php';
-$usersObject = new Users();
-$usersObject->addUser("Karolina"); // Class has function addUser;
-				?&gt;</code></pre>
+		<pre class="mediumcode"><code class="php">&lt;?php
+	include 'Users.php';
+	$usersObject = new Users();
+	$usersObject->addUser("Karolina"); // Class has function addUser;
+?&gt;</code></pre>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-include 'Users.php';
-$usersObject = new Users();
-$usersObject->addUser("Karolina"); // Class has function addUser;
-$users = $usersObject->users; // Class has also a variable users;
-
-				?&gt;</code></pre>
+		<pre class="mediumcode"><code class="php">&lt;?php
+	include 'Users.php';
+	$usersObject = new Users();
+	$usersObject->addUser("Karolina"); // Class has function addUser;
+	$users = $usersObject->users; // Class has also a variable users;
+?&gt;</code></pre>
 </div></div></section>
 
 
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-....
-print_r($users); // Prints Karolina
-print "<br/>";
-print_r($usersObject->users); // Prints Karolina
-print "<br/>";
-				?&gt;</code></pre>
-</div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-....
-$usersObject->addUser("Lukas");
-				?&gt;</code></pre>
-</div></div></section>
-
-<section class="slide text"><div class="overlay"><div class="content">
-		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-....
-print_r($users); // Prints Karolina
-print "<br/>";
-print_r($usersObject->users); // Prints Karolina and Lukas
-print "<br/>";
+		<pre class="mediumcode"><code class="php">&lt;?php
+	....
+	print_r($users); // Prints Karolina
+	print "&lt;br/&gt;";
+	print_r($usersObject->users); // Prints Karolina
+	print "&lt;br/&gt;";
 ?&gt;</code></pre>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
 		<pre><code class="php">&lt;?php
-....
-$usersObject->removeUser(1); // Class has also removeUser function.
-print_r($usersObject->users); // Prints Karolina
-
+	....
+	$usersObject->addUser("Lukas");
 ?&gt;</code></pre>
 </div></div></section>
 
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
-		<pre><code class="php">&lt;?php
-....
-$usersObject2 = new Users();
-$usersObject2->addUser("Greta");
+		<pre class="mediumcode"><code class="php">&lt;?php
+	....
+	print_r($users); // Prints Karolina
+	print "&lt;br/&gt;";
+	print_r($usersObject->users); // Prints Karolina and Lukas
+	print "&lt;br/&gt;";
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre class="mediumcode"><code class="php">&lt;?php
+	....
+	$usersObject->removeUser(1); // Class has also removeUser function.
+	print_r($usersObject->users); // Prints Karolina
 
 ?&gt;</code></pre>
 </div></div></section>
@@ -137,11 +126,21 @@ $usersObject2->addUser("Greta");
 <section class="slide text"><div class="overlay"><div class="content">
 		<h2>Objects in PHP</h2>
 		<pre><code class="php">&lt;?php
-....
-$usersObject2 = new Users();
-$usersObject2->addUser("Greta");
-print_r($usersObject2); // Prints Greta
-print_r($usersObject); // Prints Karolina
+	....
+	$usersObject2 = new Users();
+	$usersObject2->addUser("Greta");
+
+?&gt;</code></pre>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Objects in PHP</h2>
+		<pre><code class="php">&lt;?php
+	....
+	$usersObject2 = new Users();
+	$usersObject2->addUser("Greta");
+	print_r($usersObject2); // Prints Greta
+	print_r($usersObject); // Prints Karolina
 ?&gt;</code></pre>
 </div></div></section>
 
