@@ -1,12 +1,24 @@
 <?php
 	$edit = isset($_GET['edit']) ? $_GET['edit'] : ''; 
 	$fetch_error = false;
-	if(is_numeric($edit) && !$_POST){
-		// TODO: Get content
 
-		$title = "";
-		$author = "";
-		$content = "";
+	if(is_numeric($edit) && !$_POST){
+		$conn = new mysqli('localhost','test','fullstack','fullstack'); // Here your database 
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+
+		$data = $conn->query("SELECT * FROM blog_entries WHERE id=$edit");
+		if($data && $data->num_rows > 0){
+			$row = $data->fetch_assoc();
+			$title = $row['title'];
+			$author = $row['author'];
+			$content = $row['content'];
+			$success = 	isset($_GET['success']) ? $_GET['success'] : '';
+			$error = array("title" => "","author" => "", "content" => "","database" => "");
+		}else{
+			$fetch_error = true;
+		}
 	} else {
 		$title = isset($_POST['title']) ? $_POST['title'] : '';
 		$author = isset($_POST['author']) ? $_POST['author'] : '';
@@ -67,8 +79,7 @@
 		?>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 			<p>Title: 
-				<input type="text" name="title" 
-					value="<?php echo $title; ?>"/>
+				<input type="text" name="title" value="<?php echo $title; ?>"/>
 				<?php echo $error['title']; ?>
 			</p>
 			<p>Author: <input type="text" name="author" 
