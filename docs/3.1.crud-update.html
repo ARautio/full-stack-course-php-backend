@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Full Stack Course - 3.1. CRUD: Update</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles-ca/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.configure({tabReplace: '  '});
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+<body class="shower list">
+
+<section class="slide main"><div class="overlay"><div class="content">
+	<h2 class="shout">CRUD: Update</h2>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>CRUD: Update</h2>
+	<p>Update will be an addition to edit file because they share the same form.
+		This makes updates easier because if we want to add some new forms it will be done
+		only once. 
+	</p>
+	<p>In programming it's always better try to handle things at one place
+		so that if changes are needed, we don't have to do them in multiple places.
+	</p>
+</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Create vs. update</h2>
+	<p>First we need someway to differenciate new and already existing.
+	</p>
+	<pre>
+		<code class="php">
+$edit = isset($_GET['edit']) ? $_GET['edit'] : '';</code>
+	</pre>
+</div></div></section>
+
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Create vs. update</h2>
+		<p>And additional if statement to check for previous value + that we are not saving.</p>
+		<pre class="mediumcode">
+			<code class="php">if(is_numeric($edit) && !$_POST){
+	// Here should be the code which will fetch the content of blog entry
+}else{
+	// Move the code from initial values and saving values to here 	
+}</code>
+		</pre>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Create vs. update</h2>
+		<p>And additional if statement to check for previous value + that we are not saving.</p>
+		<pre class="smallcode">
+<code class="php">
+$conn = new mysqli('localhost','test','fullstack','fullstack'); // Put your database here 
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+$data = $conn->query("SELECT * FROM blog_entries WHERE id=$edit");
+$row = $data->fetch_assoc();
+$title = $row['title'];
+</code>
+		</pre>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+		<h2>Create vs. update</h2>
+		<p>And another when saving, check whether we are updating or creating new</p>
+		<pre class="mediumcode">
+			<code class="php">if(is_numeric($edit)){
+	$saved = $conn->query("UPDATE blog_entries SET title='$title'
+		author='$author' content='$content' WHERE id=$edit");
+}else{
+	$saved = $conn->query("INSERT INTO blog_entries  
+		(title, author, content) VALUES ('$title','$author','$content')");
+}</code>
+		</pre>
+	</div></div></section>
+
+<section class="slide text"><div class="overlay"><div class="content">
+	<h2>Add edit link to read page</h2>
+	<pre class="mediumcode">
+			<code class="php">
+echo ' &lt;a href=&quot;edit.php?id=' . $row['id'] . '&quot;&gt;Edit&lt;/a&gt;;
+
+			</code>
+					</pre>			
+	
+</div></div></section>
+
+<div class="progress"></div>
+
+<script src="js/shower.min.js"></script>
+
+</body>
+</html>

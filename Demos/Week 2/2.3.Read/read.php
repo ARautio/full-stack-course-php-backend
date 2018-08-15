@@ -1,50 +1,43 @@
 <!doctype html>
 <html>
 	<head>
-			<title>Blog create</title>
+			<title>Blog Read</title>
 	</head>
 	<body>
 <?php
-$id = isset($_GET['id']) ? $_GET['id'] : null;
+$id = isset($_GET['id']) ? $_GET['id'] : null; 
 $year_month = isset($_GET['month']) ? $_GET['month'] : null;
 $error = "";
 
-$conn = new mysqli('localhost','test','fullstack','fullstack'); 
+$conn = new mysqli('localhost','test','fullstack','fullstack'); // 	Here your database 
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-$filter = "";
-if($id != null){
-	$id = $conn->real_escape_string($id);
-	$filter = " WHERE id=" . $id;
-}
 
-if($year_month != null && strlen($year_month) == 7){
-	$year_month = $conn->real_escape_string($year_month); // 2018-05
+$selection = "";
+if(is_numeric($id)){
+	$selection = " WHERE id=" . $id;
+}
+	
+if(strlen($year_month) == 7){ // TODO: Additional check for the content
 	list($year,$month) = explode('-',$year_month);
-	$filter = " WHERE year(date)=" . $year . " AND month(date)=" . $month;
+	$selection = " WHERE year(date)=" . $year . " AND month(date)=" .$month;
 }
 
-$entries = $conn->query("SELECT * FROM blog_entries" . $filter);
+$entries = $conn->query("SELECT * FROM blog_entries" . $selection);
 
-if($entries){
-	if($entries->num_rows == 0){
-		$error = "No blog entry to show";
-	}
+if($entries && $entries->num_rows > 0 ){
 	while($row = $entries->fetch_assoc()){
-	?>
-		<h1><a href="read.php?id=<?php print $row['id'] ;?>">
-			<?php print $row['title']; ?>
-		</a></h1>
-		<h2><?php print $row['date']; ?> / <?php print $row['author']; ?></h2>
-		<div><?php print $row['content']; ?></div>
-	<?php
+?>
+	<h1><a href="read.php?id=<?php print $row['id']; ?>"><?php print $row['title']; ?></a></h1>
+	<h2><?php print $row['author']; ?> / <?php print $row['date']; ?></h2>
+	<div><?php print $row['content']; ?></div>
+<?php
 	}
-}else{
-	$error = "Error finding a content";
+}else {
+	$error = "<p>No blog entries to show</p>";
 }
-
-print "<p>" . $error . "</p>";
+print $error;
 ?>
 	</body>
 </html>
