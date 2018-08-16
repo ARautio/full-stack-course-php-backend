@@ -34,7 +34,7 @@ $entries = $conn->query("SELECT * FROM blog_entries " . $selection);
 			if($entries && $entries->num_rows > 0){
 				while($row = $entries->fetch_assoc()){
 					echo '<h2><a href="read.php?id=' . $row['id'] . '">' . $row['title'] . '</a>';
-					echo ' <a href="edit-5.php?edit=' . $row['id'] . '">Edit</a></h2>';
+					echo ' <a href="edit-5.1.php?edit=' . $row['id'] . '">Edit</a></h2>';
 					echo '<h3>' . $row['date'] . ' ' . $row['author']. '</h3>';
 					echo '<div>' .$row['content'] . '</div>';
 				}
