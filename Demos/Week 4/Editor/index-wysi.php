@@ -4,26 +4,16 @@
 <html>
 	<head>
 		<title>Editor</title>
-		<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-		<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-		
+
+		<!-- 1. You need to download these files and following lines to head tag -->
 		<script src="wysirules.js"></script>
 		<script src="wysihtml5-0.3.0.min.js"></script>
 		<link href="wysi.css" rel="stylesheet">
 
-		<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  	<script>tinymce.init({ selector:'#tiny' });</script>
-		
 	</head>
 	<body>
 		<form method="post">
-			<!-- Quill -->			
-			<div id="editor">
-  			<p>Hello World!</p>
-  			<p>Some initial <strong>bold</strong> text</p>
-  			<p><br></p>
-			</div>
-			
+			<!-- 2. Add Toolbar and Textarea -->
 			<!-- WYSI -->
 			<div id="wysihtml5-toolbar" style="display: none;">
 				<a data-wysihtml5-command="bold">bold</a>
@@ -45,16 +35,9 @@
 				</div>
 			</div>		
 			<textarea id="wysihtml5-textarea" name="text"> </textarea>
-
-			<textarea id="tiny" name="text2"> </textarea>
 			<input type="submit" value="Save"/>
 		</form>
-		<script>
-  		var quill = new Quill('#editor', {
-    		theme: 'snow'
-  		});
-		</script>
-		
+		<!-- 3. Add editor script and check that toolbar and textarea elements match -->
 		<script>
 			var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
 				toolbar:      "wysihtml5-toolbar", // id of toolbar element
